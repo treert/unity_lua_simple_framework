@@ -33,6 +33,9 @@ function OnInitOK()
     --ShowPromptUI()
     --ShowMessageUI()
     ShowLoginUI()
+
+    -- local xx1 = panelMgr:CreateLayer(1)
+    -- local xx2 = panelMgr:CreateLayer(2)
 end
 
 --场景切换通知

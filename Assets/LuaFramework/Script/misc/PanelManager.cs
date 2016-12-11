@@ -27,6 +27,29 @@ namespace LuaFramework
             }
         }
 
+        public Transform CreateLayer(int layer_order)
+        {
+            Transform tr = _parent.FindChild("layer_" + layer_order);
+            if(tr == null)
+            {
+                GameObject go = new GameObject();
+                var rect = go.AddComponent<RectTransform>();
+                rect.anchorMax = new Vector2(1, 1);
+                rect.anchorMin = new Vector2(0, 0);
+                rect.offsetMin = new Vector2(0, 0);
+                rect.offsetMax = new Vector2(0, 0);
+                go.name = "layer_" + layer_order;
+                go.transform.SetParent(_parent, false);
+                var canvas = go.AddComponent<Canvas>();
+                canvas.overrideSorting = true;
+                canvas.sortingOrder = layer_order;
+                go.AddComponent<GraphicRaycaster>();
+
+                tr = rect;
+            }
+            return tr;
+        }
+
         public GameObject CreatePanelSync(int lua_id, string asset_name)
         {
             GameObject template = AppFacade.ResManager.GetRes<GameObject>(asset_name);

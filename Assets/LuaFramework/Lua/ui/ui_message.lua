@@ -4,6 +4,7 @@
 
 local cls_ui_message = class("cls_ui_message",cls_ui_base)
 cls_ui_message.s_ui_panel = 'oms_test/PanelMessage'
+cls_ui_message.s_ui_order = 100
 local l_instance = nil
 
 function cls_ui_message:ctor(msg)

@@ -25,6 +25,17 @@ function ui_manager.DelUI(ui)
     ui_manager[ui.m_unique_id] = nil
 end
 
+local ui_layers = {}
+function AddUIToLayer(transform,layer_order)
+    layer_order = layer_order or 1
+    local layer = ui_layers[layer_order]
+    if not layer then
+        layer = panelMgr:CreateLayer(layer_order)
+        ui_layers[layer_order] = layer
+    end
+    transform:SetParent(layer,false)
+end
+
 function cls_ui_base:ctor()
     assert(self.s_ui_panel ~= nil,"ui必须要有对应的资源")
 
@@ -49,6 +60,7 @@ end
 function cls_ui_base:OnCreate(obj)
     self.m_game_object = obj
     self.m_lua_behaviour = obj:GetComponent('LuaBehaviour');
+    AddUIToLayer(self.m_game_object.transform, self.s_ui_order or 1)
 end
 
 function cls_ui_base:OnAwake()
