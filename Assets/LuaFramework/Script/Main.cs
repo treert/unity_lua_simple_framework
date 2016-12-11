@@ -8,10 +8,9 @@ namespace LuaFramework
         //启动游戏
         void Start()
         {
-            AppFacade.Instance.AddManager<LuaManager>("LuaManager");
-            AppFacade.Instance.AddManager<ResourceManager>("ResourceManager");
-            AppFacade.Instance.AddManager<PanelManager>("PanelManager");
-            AppFacade.Instance.AddManager<GameManager>("GameManager");
+            AppFacade.StartUp(gameObject);
         }
+
+
     }
 }

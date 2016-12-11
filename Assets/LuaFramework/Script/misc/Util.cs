@@ -213,7 +213,7 @@ namespace LuaFramework
         public static void ClearMemory()
         {
             GC.Collect(); Resources.UnloadUnusedAssets();
-            LuaManager mgr = AppFacade.Instance.GetManager<LuaManager>("LuaManager");
+            LuaManager mgr = AppFacade.LuaManager;
             if (mgr != null) mgr.LuaGC();
         }
 
@@ -237,7 +237,7 @@ namespace LuaFramework
         /// </summary>
         public static object[] CallMethod(string module, string func, params object[] args)
         {
-            LuaManager luaMgr = AppFacade.Instance.GetManager<LuaManager>("LuaManager");
+            LuaManager luaMgr = AppFacade.LuaManager;
             if (luaMgr == null) return null;
             return luaMgr.CallFunction(module + "." + func, args);
         }
@@ -250,7 +250,7 @@ namespace LuaFramework
         /// <returns></returns>
         public static object[] CallGlobalLuaFunction(string func, params object[] args)
         {
-            LuaManager luaMgr = AppFacade.Instance.GetManager<LuaManager>("LuaManager");
+            LuaManager luaMgr = AppFacade.LuaManager;
             if (luaMgr == null) return null;
             return luaMgr.CallFunction(func, args);
         }

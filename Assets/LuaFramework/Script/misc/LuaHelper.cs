@@ -31,7 +31,7 @@ namespace LuaFramework
         /// </summary>
         public static PanelManager GetPanelManager()
         {
-            return AppFacade.Instance.GetManager<PanelManager>("PanelManager");
+            return AppFacade.GetManager<PanelManager>();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace LuaFramework
         /// </summary>
         public static ResourceManager GetResManager()
         {
-            return AppFacade.Instance.GetManager<ResourceManager>("ResourceManager");
+            return AppFacade.GetManager<ResourceManager>();
         }
     }
 }

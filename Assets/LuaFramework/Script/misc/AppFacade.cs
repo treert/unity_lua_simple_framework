@@ -5,104 +5,79 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using LuaFramework;
 
-public class AppFacade
+namespace LuaFramework
 {
-    private static AppFacade _instance;
-    public static AppFacade Instance
+    public class AppFacade
     {
-        get
+        private static GameObject _game_object;
+        public static GameObject RootObject
         {
-            if (_instance == null)
+            get
             {
-                _instance = new AppFacade();
+                return _game_object;
             }
-            return _instance;
         }
-    }
 
-    public static LuaManager LuaManager {
-        get
+        public static void StartUp(GameObject game_object)
         {
-            return Instance.GetManager<LuaManager>("LuaManager");
+            _game_object = game_object;
+
+            AddManager<LuaManager>();
+            AddManager<ResourceManager>();
+            AddManager<PanelManager>();
+            AddManager<GameManager>();
         }
-    }
 
-    public static ResourceManager ResManager
-    {
-        get
+        private static Dictionary<string, object> _managers = new Dictionary<string, object>();
+        /// <summary>
+        /// 添加管理器
+        /// </summary>
+        public static T AddManager<T>() where T : MonoBehaviour
         {
-            return Instance.GetManager<ResourceManager>("ResourceManager");
-        }
-    }
+            var type = typeof(T);
+            var type_name = type.Name;
 
-    protected AppFacade()
-    {
-        _game_manager = GameObject.Find("GameManager");
+            object result = null;
+            _managers.TryGetValue(type_name, out result);
+            if(result == null)
+            {
+                result = RootObject.AddComponent<T>();
+                _managers.Add(type_name, result);
+            }
 
-    }
-
-    private GameObject _game_manager;
-    private Dictionary<string, object> _managers = new Dictionary<string, object>();
-
-    /// <summary>
-    /// 添加管理器
-    /// </summary>
-    public void AddManager(string typeName, object obj)
-    {
-        if (!_managers.ContainsKey(typeName))
-        {
-            _managers.Add(typeName, obj);
-        }
-    }
-
-    /// <summary>
-    /// 添加Unity对象
-    /// </summary>
-    public T AddManager<T>(string typeName) where T : Component
-    {
-        object result = null;
-        _managers.TryGetValue(typeName, out result);
-        if (result != null)
-        {
             return (T)result;
         }
-        Component c = _game_manager.AddComponent<T>();
-        _managers.Add(typeName, c);
-        return default(T);
-    }
 
-    /// <summary>
-    /// 获取系统管理器
-    /// </summary>
-    public T GetManager<T>(string typeName) where T : class
-    {
-        if (!_managers.ContainsKey(typeName))
+        /// <summary>
+        /// 获取管理器
+        /// </summary>
+        public static T GetManager<T>() where T : class
         {
-            return default(T);
-        }
-        object manager = null;
-        _managers.TryGetValue(typeName, out manager);
-        return (T)manager;
-    }
+            var type = typeof(T);
+            var type_name = type.Name;
 
-    /// <summary>
-    /// 删除管理器
-    /// </summary>
-    public void RemoveManager(string typeName)
-    {
-        if (!_managers.ContainsKey(typeName))
-        {
-            return;
+            object manager = null;
+            _managers.TryGetValue(type_name, out manager);
+            return (T)manager;
         }
-        object manager = null;
-        _managers.TryGetValue(typeName, out manager);
-        Type type = manager.GetType();
-        if (type.IsSubclassOf(typeof(MonoBehaviour)))
+
+        /**    管理器快捷访问     **/
+
+        public static LuaManager LuaManager
         {
-            GameObject.Destroy((Component)manager);
+            get
+            {
+                return GetManager<LuaManager>();
+            }
         }
-        _managers.Remove(typeName);
+
+        public static ResourceManager ResManager
+        {
+            get
+            {
+                return GetManager<ResourceManager>();
+            }
+        }
     }
 }
