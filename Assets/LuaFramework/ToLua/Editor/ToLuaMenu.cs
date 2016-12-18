@@ -979,11 +979,11 @@ public static class ToLuaMenu
         Debug.Log("Copy lua files over");
     }
 
-    [MenuItem("Lua/Copy Lua  files to Persistent", false, 52)]
+    [MenuItem("Lua/Copy Lua  files to AssetStreams", false, 52)]
     public static void CopyLuaFilesToPersistent()
     {
         ClearAllLuaFiles();
-        string destDir = Application.persistentDataPath + "/" + GetOS() + "/Lua";
+        string destDir = Application.streamingAssetsPath + "/Lua";
         CopyLuaBytesFiles(LuaConst.luaDir, destDir, false);
         CopyLuaBytesFiles(LuaConst.toluaDir, destDir, false);
         AssetDatabase.Refresh();

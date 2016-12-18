@@ -85,6 +85,10 @@ namespace LuaFramework
             //{
             //    lua.AddSearchPath(Util.DataPath + "lua");
             //}
+            if (!Application.isEditor)
+            {
+                lua.AddSearchPath(Application.streamingAssetsPath + "/Lua");
+            }
         }
 
         public object[] DoFile(string filename)
