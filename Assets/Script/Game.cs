@@ -150,6 +150,9 @@ public class Game : MonoBehaviour{
 
     public void StartGame()
     {
+        // reset 
+        Reset();
+
         _game_state = GameState.Runing;
         _bird_control.StartGame();
     }
