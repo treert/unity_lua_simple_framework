@@ -10,6 +10,8 @@ public class BirdControl : MonoBehaviour {
     private Rigidbody2D _rigid_body;
     private Vector2 _born_pos;
 
+    private bool _is_runing = false;
+
     private bool _is_dead = false;
     public bool IsDead
     {
@@ -31,7 +33,7 @@ public class BirdControl : MonoBehaviour {
 	void Update () {
 
 
-        if (IsDead)
+        if (IsDead || !_is_runing)
         {
             return;
         }
@@ -75,6 +77,7 @@ public class BirdControl : MonoBehaviour {
     public void StartGame()
     {
         _rigid_body.gravityScale = 1;
+        _is_runing = true;
     }
 
     public void Reset()
@@ -83,5 +86,7 @@ public class BirdControl : MonoBehaviour {
         _is_dead = false;
         transform.localPosition = _born_pos;
         _rigid_body.gravityScale = 0;
+        _rigid_body.velocity = new Vector2();
+        _is_runing = false;
     }
 }
