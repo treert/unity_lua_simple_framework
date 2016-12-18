@@ -32,7 +32,7 @@ function AddUIToLayer(transform,layer_order)
     layer_order = layer_order or 1
     local layer = ui_layers[layer_order]
     if not layer then
-        layer = panelMgr:CreateLayer(layer_order)
+        layer = panelMgr:CreateNguiLayer(layer_order)
         ui_layers[layer_order] = layer
     end
     transform:SetParent(layer,false)
@@ -74,7 +74,7 @@ function cls_ui_base:OnCreate(obj)
     self.m_game_object = obj
     self.m_transform = obj.transform
     self.m_lua_behaviour = obj:GetComponent('LuaBehaviour');
-    -- AddUIToLayer(self.m_game_object.transform, self.s_ui_order or 1)
+    AddUIToLayer(self.m_game_object.transform, self.s_ui_order or 1)
 end
 
 function cls_ui_base:OnAwake()

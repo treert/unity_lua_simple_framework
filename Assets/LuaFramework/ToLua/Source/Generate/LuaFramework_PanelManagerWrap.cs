@@ -8,6 +8,7 @@ public class LuaFramework_PanelManagerWrap
 	{
 		L.BeginClass(typeof(LuaFramework.PanelManager), typeof(UnityEngine.MonoBehaviour));
 		L.RegFunction("CreateLayer", CreateLayer);
+		L.RegFunction("CreateNguiLayer", CreateNguiLayer);
 		L.RegFunction("CreatePanelSync", CreatePanelSync);
 		L.RegFunction("GetGameObject", GetGameObject);
 		L.RegFunction("__eq", op_Equality);
@@ -24,6 +25,24 @@ public class LuaFramework_PanelManagerWrap
 			LuaFramework.PanelManager obj = (LuaFramework.PanelManager)ToLua.CheckObject(L, 1, typeof(LuaFramework.PanelManager));
 			int arg0 = (int)LuaDLL.luaL_checknumber(L, 2);
 			UnityEngine.Transform o = obj.CreateLayer(arg0);
+			ToLua.Push(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int CreateNguiLayer(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			LuaFramework.PanelManager obj = (LuaFramework.PanelManager)ToLua.CheckObject(L, 1, typeof(LuaFramework.PanelManager));
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 2);
+			UnityEngine.Transform o = obj.CreateNguiLayer(arg0);
 			ToLua.Push(L, o);
 			return 1;
 		}

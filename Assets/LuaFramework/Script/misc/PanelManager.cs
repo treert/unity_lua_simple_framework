@@ -19,9 +19,9 @@ namespace LuaFramework
             {
                 if (_parent == null)
                 {
-                    GameObject go = GameObject.Find("UI Root");
+                    GameObject go = GameObject.Find("NguiCamera");
                     _parent = go.transform;
-                    //Util.ClearChild(_parent);
+                    Util.ClearChild(_parent);
                 }
                 return _parent;
             }
@@ -29,7 +29,7 @@ namespace LuaFramework
 
         public Transform CreateLayer(int layer_order)
         {
-            Transform tr = _parent.FindChild("layer_" + layer_order);
+            Transform tr = Parent.FindChild("layer_" + layer_order);
             if(tr == null)
             {
                 GameObject go = new GameObject();
@@ -46,6 +46,22 @@ namespace LuaFramework
                 go.AddComponent<GraphicRaycaster>();
 
                 tr = rect;
+            }
+            return tr;
+        }
+
+        public Transform CreateNguiLayer(int layer_order)
+        {
+            Transform tr = Parent.FindChild("ngui_layer_" + layer_order);
+            if (tr == null)
+            {
+                GameObject go = new GameObject();
+                var ui_panel = go.AddComponent<UIPanel>();
+                ui_panel.depth = layer_order;
+                go.name = "layer_" + layer_order;
+                go.transform.SetParent(_parent, false);
+
+                tr = go.transform;
             }
             return tr;
         }
