@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: 0e77b62519909bc4dae9df48dfb3b65d
+timeCreated: 1481880075
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: flappy_packer_0
+    21300002: flappy_packer_1
+    21300004: flappy_packer_2
+    21300006: flappy_packer_3
+    21300008: flappy_packer_4
+    21300010: flappy_packer_5
+    21300012: flappy_packer_6
+    21300014: flappy_packer_7
+    21300016: flappy_packer_8
+    21300018: flappy_packer_9
+    21300020: flappy_packer_10
+    21300022: flappy_packer_11
+    21300024: flappy_packer_12
+    21300026: flappy_packer_13
+    21300028: flappy_packer_14
+    21300030: flappy_packer_15
+    21300032: flappy_packer_16
+    21300034: flappy_packer_17
+    21300036: flappy_packer_18
+    21300038: flappy_packer_19
+    21300040: flappy_packer_20
+    21300042: flappy_packer_21
+    21300044: flappy_packer_22
+    21300046: flappy_packer_23
+    21300048: flappy_packer_24
+    21300050: flappy_packer_25
+    21300052: flappy_packer_26
+    21300054: flappy_packer_27
+    21300056: flappy_packer_28
+    21300058: flappy_packer_29
+    21300060: flappy_packer_30
+    21300062: flappy_packer_31
+    21300064: flappy_packer_32
+    21300066: flappy_packer_33
+    21300068: flappy_packer_34
+    21300070: flappy_packer_35
+    21300072: flappy_packer_36
+    21300074: flappy_packer_37
+    21300076: flappy_packer_38
+    21300078: flappy_packer_39
+    21300080: flappy_packer_40
+    21300082: flappy_packer_41
+    21300084: flappy_packer_42
+    21300086: flappy_packer_43
+    21300088: flappy_packer_44
+    21300090: flappy_packer_45
+    21300092: flappy_packer_46
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flappy_packer_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1749
+        width: 590
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_1
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1966
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_2
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1987
+        width: 86
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_3
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1984
+        width: 89
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_4
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 2038
+        width: 65
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_5
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 1871
+        width: 290
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_6
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1975
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_7
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1908
+        width: 452
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_8
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1993
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_9
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 1965
+        width: 201
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_10
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1884
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_11
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1926
+        width: 86
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_12
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1964
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_13
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1828
+        width: 86
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_14
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1915
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_15
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 1852
+        width: 111
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_16
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1875
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_17
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 1775
+        width: 112
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_18
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1884
+        width: 136
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_19
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 1785
+        width: 178
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_20
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1813
+        width: 65
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_21
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1835
+        width: 108
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_22
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1868
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_23
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1868
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_24
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 1835
+        width: 109
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_25
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1805
+        width: 201
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_26
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1801
+        width: 53
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_27
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 1775
+        width: 4
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_28
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 1787
+        width: 201
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_29
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1600
+        width: 498
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_30
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1590
+        width: 491
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_31
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1613
+        width: 69
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_32
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1658
+        width: 40
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_33
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1658
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_34
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1656
+        width: 64
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_35
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 1658
+        width: 68
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_36
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1658
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_37
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 1658
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_38
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1658
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_39
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1658
+        width: 63
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_40
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 1658
+        width: 63
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_41
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1569
+        width: 148
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_42
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1576
+        width: 125
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_43
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1424
+        width: 283
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_44
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 769
+        width: 130
+        height: 801
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_45
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 759
+        width: 133
+        height: 802
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flappy_packer_46
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 764
+        width: 132
+        height: 804
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
