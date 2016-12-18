@@ -141,6 +141,8 @@ public static class CustomSettings
         //for LuaFramework
         _GT(typeof(RectTransform)),
         _GT(typeof(Text)),
+        _GT(typeof(UISprite)),
+        _GT(typeof(UILabel)),
 
         _GT(typeof(Util)),
         _GT(typeof(LuaHelper)),

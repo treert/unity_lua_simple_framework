@@ -156,11 +156,11 @@ public class Game : MonoBehaviour{
         _game_state = GameState.Runing;
         _bird_control.StartGame();
 
-        var root = GameObject.Find("UI Root").transform;
-        var begin_ui = root.Find("BeginUI").gameObject;
-        if (begin_ui) begin_ui.SetActive(false);
-        var end_ui = root.Find("ResultUI").gameObject;
-        if (end_ui) end_ui.SetActive(true);
+        //var root = GameObject.Find("UI Root").transform;
+        //var begin_ui = root.Find("BeginUI").gameObject;
+        //if (begin_ui) begin_ui.SetActive(false);
+        //var end_ui = root.Find("ResultUI").gameObject;
+        //if (end_ui) end_ui.SetActive(true);
     }
 	
 
@@ -172,10 +172,16 @@ public class Game : MonoBehaviour{
         _game_state = GameState.Init;
         _score = 0;
 
-        var root = GameObject.Find("UI Root").transform;
-        var begin_ui = root.Find("BeginUI").gameObject;
-        if(begin_ui) begin_ui.SetActive(true);
-        var end_ui = root.Find("ResultUI").gameObject;
-        if(end_ui) end_ui.SetActive(false);
+        //var root = GameObject.Find("UI Root").transform;
+        //var begin_ui = root.Find("BeginUI").gameObject;
+        //if(begin_ui) begin_ui.SetActive(true);
+        //var end_ui = root.Find("ResultUI").gameObject;
+        //if(end_ui) end_ui.SetActive(false);
+    }
+
+
+    public int GetScore()
+    {
+        return _score/2;
     }
 }

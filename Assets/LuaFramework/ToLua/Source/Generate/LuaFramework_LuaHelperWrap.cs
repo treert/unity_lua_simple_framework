@@ -10,6 +10,9 @@ public class LuaFramework_LuaHelperWrap
 		L.RegFunction("GetType", GetType);
 		L.RegFunction("GetPanelManager", GetPanelManager);
 		L.RegFunction("GetResManager", GetResManager);
+		L.RegFunction("StartGame", StartGame);
+		L.RegFunction("ResetGame", ResetGame);
+		L.RegFunction("GetScore", GetScore);
 		L.EndStaticLibs();
 	}
 
@@ -54,6 +57,52 @@ public class LuaFramework_LuaHelperWrap
 			ToLua.CheckArgsCount(L, 0);
 			LuaFramework.ResourceManager o = LuaFramework.LuaHelper.GetResManager();
 			ToLua.Push(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int StartGame(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			LuaFramework.LuaHelper.StartGame();
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ResetGame(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			LuaFramework.LuaHelper.ResetGame();
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetScore(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			int o = LuaFramework.LuaHelper.GetScore();
+			LuaDLL.lua_pushinteger(L, o);
 			return 1;
 		}
 		catch(Exception e)

@@ -41,5 +41,20 @@ namespace LuaFramework
         {
             return AppFacade.GetManager<ResourceManager>();
         }
+
+        public static void StartGame()
+        {
+            GameObject.Find("Game").GetComponent<Game>().StartGame();
+        }
+
+        public static void ResetGame()
+        {
+            GameObject.Find("Game").GetComponent<Game>().Reset();
+        }
+
+        public static int GetScore()
+        {
+            return GameObject.Find("Game").GetComponent<Game>().GetScore();
+        }
     }
 }

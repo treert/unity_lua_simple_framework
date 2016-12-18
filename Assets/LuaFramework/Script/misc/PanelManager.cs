@@ -19,9 +19,9 @@ namespace LuaFramework
             {
                 if (_parent == null)
                 {
-                    GameObject go = GameObject.Find("Canvas");
+                    GameObject go = GameObject.Find("UI Root");
                     _parent = go.transform;
-                    Util.ClearChild(_parent);
+                    //Util.ClearChild(_parent);
                 }
                 return _parent;
             }

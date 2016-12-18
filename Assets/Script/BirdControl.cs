@@ -62,8 +62,13 @@ public class BirdControl : MonoBehaviour {
     // bird die
     public void GoDie()
     {
+        if(_is_dead)
+        {
+            return;
+        }
         _is_dead = true;
         _bird_control_animator.SetBool("m_is_alive", false);
+        LuaFramework.Util.CallGlobalLuaFunction("SendGlobalMessage", "ENUM_GAME_OVER");
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)

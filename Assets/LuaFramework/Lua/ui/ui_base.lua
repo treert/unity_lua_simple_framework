@@ -5,6 +5,8 @@ ui基类cls_ui_base
 
 ]]
 
+local UpdateBeat = UpdateBeat
+
 cls_ui_base = class("cls_ui_base")
 cls_ui_base._id = 0
 
@@ -52,6 +54,17 @@ function cls_ui_base:ctor()
     end
 end
 
+
+function cls_ui_base:EnableUpdate()
+    self._update_enable = true
+    UpdateBeat:Add(self.Update, self)
+    -- body
+end
+
+function cls_ui_base:Update()
+    -- nothing
+end
+
 function cls_ui_base:GetUniqueId()
     return self.m_unique_id
 end
@@ -59,8 +72,9 @@ end
 -- 创建panel返回调用，子类一般不需要处理这个事件
 function cls_ui_base:OnCreate(obj)
     self.m_game_object = obj
+    self.m_transform = obj.transform
     self.m_lua_behaviour = obj:GetComponent('LuaBehaviour');
-    AddUIToLayer(self.m_game_object.transform, self.s_ui_order or 1)
+    -- AddUIToLayer(self.m_game_object.transform, self.s_ui_order or 1)
 end
 
 function cls_ui_base:OnAwake()
@@ -68,6 +82,13 @@ function cls_ui_base:OnAwake()
 end
 
 function cls_ui_base:OnDestroy()
+    if self._update_enable then
+        UpdateBeat:Remove(self.Update, self)
+    end
+
+    --移除该ui所有注册的事件
+    removeNotifys(self)
+
     ui_manager.DelUI(self)
     log("cls_ui_base OnDestroy unique_id "..self.m_unique_id)
 end
