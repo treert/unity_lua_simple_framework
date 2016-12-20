@@ -12,6 +12,7 @@ namespace LuaFramework
         // Use this for initialization
         void Awake()
         {
+            new LuaResLoader();
             lua = new LuaState();
             this.OpenLibs();
             lua.LuaSetTop(0);
@@ -85,10 +86,10 @@ namespace LuaFramework
             //{
             //    lua.AddSearchPath(Util.DataPath + "lua");
             //}
-            if (!Application.isEditor)
-            {
-                lua.AddSearchPath(Application.streamingAssetsPath + "/Lua");
-            }
+            //if (!Application.isEditor)
+            //{
+            //    lua.AddSearchPath(Application.streamingAssetsPath + "/Lua");
+            //}
         }
 
         public object[] DoFile(string filename)
