@@ -135,13 +135,16 @@ public class Game : MonoBehaviour{
             StartGame();
             return;
         }
+    }
 
+    void FixedUpdate()
+    {
         if (_game_state != GameState.Runing)
         {
             return;
         }
 
-        if(!_bird_control.IsDead)
+        if (!_bird_control.IsDead)
         {
             _UpdateFloor();
             _UpdatePipe();
