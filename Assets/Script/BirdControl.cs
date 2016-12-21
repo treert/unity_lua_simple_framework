@@ -3,6 +3,9 @@ using System.Collections;
 
 public class BirdControl : MonoBehaviour {
 
+    public AudioSource m_audio_jump;
+    public AudioSource m_audio_dead;
+
     public float m_jump_speed = 0.3f;
     public float m_rotation_ratio = 1f;
 
@@ -53,6 +56,7 @@ public class BirdControl : MonoBehaviour {
     // bird jump high
     public void Jump()
     {
+        m_audio_jump.Play();
         Rigidbody2D rigid_body = GetComponent<Rigidbody2D>();
         var v2 = rigid_body.velocity;
         v2.y = m_jump_speed;
@@ -66,6 +70,7 @@ public class BirdControl : MonoBehaviour {
         {
             return;
         }
+        m_audio_dead.Play();
         _is_dead = true;
         _bird_control_animator.SetBool("m_is_alive", false);
         LuaFramework.Util.CallGlobalLuaFunction("SendGlobalMessage", "ENUM_GAME_OVER");
