@@ -24,13 +24,28 @@ public class ErrorDisplay : MonoBehaviour
     }
     public bool Log;
     private Vector2 m_scroll;
-    internal void OnGUI()
+    internal void OnGUI_()
     {
         if (!Log)
-            return; 
+            return;
         m_scroll = GUILayout.BeginScrollView(m_scroll);
         GUI.skin.label.normal.textColor = Color.red;
         GUILayout.Label(m_logs);
+        GUILayout.EndScrollView();
+    }
+
+
+    internal void OnGUI()
+    {
+        string s = string.Empty;
+        foreach(System.Reflection.PropertyInfo info in typeof(Application).GetProperties())
+        {
+            s += info.Name + " = " + info.GetValue(null, null) + "\n";
+        }
+        m_scroll = GUILayout.BeginScrollView(m_scroll);
+        //GUILayout.BeginScrollView(new Vector2());
+        GUI.skin.label.normal.textColor = Color.red;
+        GUILayout.Label(s);
         GUILayout.EndScrollView();
     }
 }
