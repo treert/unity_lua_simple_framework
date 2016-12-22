@@ -1,8 +1,7 @@
 local _message_handler = {
 
     -- common message
-    ["ENUM_SHOW_START_UI"] = { file = "ui/ui_start", func = "ShowStartUI(...)"},
-    ["ENUM_GAME_OVER"] = { file = "ui/ui_game_over", func = "ShowGameOverUI(...)"},
+    ["ENUM_SHOW_START_UI"] = { file = "ui/ui_demo", func = "ShowDemoUI(...)"},
 }
 
 local function ReceiveUIMessage(message,... )
