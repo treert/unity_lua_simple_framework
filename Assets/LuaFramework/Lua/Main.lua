@@ -30,7 +30,8 @@ end
 
 -- GameManager初始化好了，游戏正式开始。
 function OnInitOK()
-    SendUIMessage("ENUM_SHOW_START_UI")
+    require "ui/ui_demo"
+    ShowDemoUI()
     log("GameManager初始化好了，游戏正式开始。")
 end
 

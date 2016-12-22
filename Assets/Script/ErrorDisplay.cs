@@ -37,6 +37,9 @@ public class ErrorDisplay : MonoBehaviour
 
     internal void OnGUI()
     {
+        if (!Log)
+            return;
+
         string s = string.Empty;
         foreach(System.Reflection.PropertyInfo info in typeof(Application).GetProperties())
         {
