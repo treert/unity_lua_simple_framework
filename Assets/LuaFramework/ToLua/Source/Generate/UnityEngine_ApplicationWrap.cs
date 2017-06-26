@@ -9,6 +9,7 @@ public class UnityEngine_ApplicationWrap
 		L.BeginStaticLibs("Application");
 		L.RegFunction("Quit", Quit);
 		L.RegFunction("CancelQuit", CancelQuit);
+		L.RegFunction("Unload", Unload);
 		L.RegFunction("GetStreamProgressForLevel", GetStreamProgressForLevel);
 		L.RegFunction("CanStreamedLevelBeLoaded", CanStreamedLevelBeLoaded);
 		L.RegFunction("CaptureScreenshot", CaptureScreenshot);
@@ -36,21 +37,19 @@ public class UnityEngine_ApplicationWrap
 		L.RegVar("absoluteURL", get_absoluteURL, null);
 		L.RegVar("unityVersion", get_unityVersion, null);
 		L.RegVar("version", get_version, null);
+		L.RegVar("installerName", get_installerName, null);
 		L.RegVar("bundleIdentifier", get_bundleIdentifier, null);
 		L.RegVar("installMode", get_installMode, null);
 		L.RegVar("sandboxType", get_sandboxType, null);
 		L.RegVar("productName", get_productName, null);
 		L.RegVar("companyName", get_companyName, null);
 		L.RegVar("cloudProjectId", get_cloudProjectId, null);
-		L.RegVar("webSecurityEnabled", get_webSecurityEnabled, null);
-		L.RegVar("webSecurityHostUrl", get_webSecurityHostUrl, null);
 		L.RegVar("targetFrameRate", get_targetFrameRate, set_targetFrameRate);
 		L.RegVar("systemLanguage", get_systemLanguage, null);
 		L.RegVar("backgroundLoadingPriority", get_backgroundLoadingPriority, set_backgroundLoadingPriority);
 		L.RegVar("internetReachability", get_internetReachability, null);
 		L.RegVar("genuine", get_genuine, null);
 		L.RegVar("genuineCheckAvailable", get_genuineCheckAvailable, null);
-		L.RegVar("isShowingSplashScreen", get_isShowingSplashScreen, null);
 		L.RegVar("logMessageReceived", get_logMessageReceived, set_logMessageReceived);
 		L.RegVar("logMessageReceivedThreaded", get_logMessageReceivedThreaded, set_logMessageReceivedThreaded);
 		L.RegFunction("AdvertisingIdentifierCallback", UnityEngine_Application_AdvertisingIdentifierCallback);
@@ -80,6 +79,21 @@ public class UnityEngine_ApplicationWrap
 		{
 			ToLua.CheckArgsCount(L, 0);
 			UnityEngine.Application.CancelQuit();
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int Unload(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			UnityEngine.Application.Unload();
 			return 0;
 		}
 		catch(Exception e)
@@ -554,6 +568,20 @@ public class UnityEngine_ApplicationWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_installerName(IntPtr L)
+	{
+		try
+		{
+			LuaDLL.lua_pushstring(L, UnityEngine.Application.installerName);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_bundleIdentifier(IntPtr L)
 	{
 		try
@@ -638,34 +666,6 @@ public class UnityEngine_ApplicationWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_webSecurityEnabled(IntPtr L)
-	{
-		try
-		{
-			LuaDLL.lua_pushboolean(L, UnityEngine.Application.webSecurityEnabled);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_webSecurityHostUrl(IntPtr L)
-	{
-		try
-		{
-			LuaDLL.lua_pushstring(L, UnityEngine.Application.webSecurityHostUrl);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_targetFrameRate(IntPtr L)
 	{
 		try
@@ -741,20 +741,6 @@ public class UnityEngine_ApplicationWrap
 		try
 		{
 			LuaDLL.lua_pushboolean(L, UnityEngine.Application.genuineCheckAvailable);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_isShowingSplashScreen(IntPtr L)
-	{
-		try
-		{
-			LuaDLL.lua_pushboolean(L, UnityEngine.Application.isShowingSplashScreen);
 			return 1;
 		}
 		catch(Exception e)

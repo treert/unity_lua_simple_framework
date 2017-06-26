@@ -36,6 +36,7 @@ public class UnityEngine_LightWrap
 		L.RegVar("bakedIndex", get_bakedIndex, set_bakedIndex);
 		L.RegVar("isBaked", get_isBaked, null);
 		L.RegVar("cullingMask", get_cullingMask, set_cullingMask);
+		L.RegVar("lightmappingMode", get_lightmappingMode, set_lightmappingMode);
 		L.RegVar("commandBufferCount", get_commandBufferCount, null);
 		L.EndClass();
 	}
@@ -310,7 +311,7 @@ public class UnityEngine_LightWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.Light obj = (UnityEngine.Light)o;
-			UnityEngine.LightShadowResolution ret = obj.shadowResolution;
+			UnityEngine.Rendering.LightShadowResolution ret = obj.shadowResolution;
 			ToLua.Push(L, ret);
 			return 1;
 		}
@@ -568,6 +569,25 @@ public class UnityEngine_LightWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_lightmappingMode(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Light obj = (UnityEngine.Light)o;
+			UnityEngine.LightmappingMode ret = obj.lightmappingMode;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index lightmappingMode on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_commandBufferCount(IntPtr L)
 	{
 		object o = null;
@@ -709,7 +729,7 @@ public class UnityEngine_LightWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.Light obj = (UnityEngine.Light)o;
-			UnityEngine.LightShadowResolution arg0 = (UnityEngine.LightShadowResolution)ToLua.CheckObject(L, 2, typeof(UnityEngine.LightShadowResolution));
+			UnityEngine.Rendering.LightShadowResolution arg0 = (UnityEngine.Rendering.LightShadowResolution)ToLua.CheckObject(L, 2, typeof(UnityEngine.Rendering.LightShadowResolution));
 			obj.shadowResolution = arg0;
 			return 0;
 		}
@@ -944,6 +964,25 @@ public class UnityEngine_LightWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index cullingMask on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_lightmappingMode(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Light obj = (UnityEngine.Light)o;
+			UnityEngine.LightmappingMode arg0 = (UnityEngine.LightmappingMode)ToLua.CheckObject(L, 2, typeof(UnityEngine.LightmappingMode));
+			obj.lightmappingMode = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index lightmappingMode on a nil value" : e.Message);
 		}
 	}
 }

@@ -16,6 +16,7 @@ public class UnityEngine_TimeWrap
 		L.RegVar("fixedDeltaTime", get_fixedDeltaTime, set_fixedDeltaTime);
 		L.RegVar("maximumDeltaTime", get_maximumDeltaTime, set_maximumDeltaTime);
 		L.RegVar("smoothDeltaTime", get_smoothDeltaTime, null);
+		L.RegVar("maximumParticleDeltaTime", get_maximumParticleDeltaTime, set_maximumParticleDeltaTime);
 		L.RegVar("timeScale", get_timeScale, set_timeScale);
 		L.RegVar("frameCount", get_frameCount, null);
 		L.RegVar("renderedFrameCount", get_renderedFrameCount, null);
@@ -151,6 +152,20 @@ public class UnityEngine_TimeWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_maximumParticleDeltaTime(IntPtr L)
+	{
+		try
+		{
+			LuaDLL.lua_pushnumber(L, UnityEngine.Time.maximumParticleDeltaTime);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_timeScale(IntPtr L)
 	{
 		try
@@ -242,6 +257,21 @@ public class UnityEngine_TimeWrap
 		{
 			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
 			UnityEngine.Time.maximumDeltaTime = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_maximumParticleDeltaTime(IntPtr L)
+	{
+		try
+		{
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			UnityEngine.Time.maximumParticleDeltaTime = arg0;
 			return 0;
 		}
 		catch(Exception e)

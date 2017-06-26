@@ -1892,7 +1892,7 @@ static public class NGUITools
 
 			if (mSizeFrame != frame || !Application.isPlaying)
 			{
-				Profiler.BeginSample("Editor-only GC allocation (NGUITools.screenSize)");
+				UnityEngine.Profiling.Profiler.BeginSample("Editor-only GC allocation (NGUITools.screenSize)");
 				mSizeFrame = frame;
 
 				// There seems to be a Unity 5.4 bug that returns invalid screen size when the mouse is clicked (wtf?) on OSX
@@ -1930,7 +1930,7 @@ static public class NGUITools
 				else
 #endif
 					mGameSize = new Vector2(Screen.width, Screen.height);
-				Profiler.EndSample();
+				UnityEngine.Profiling.Profiler.EndSample();
 			}
 			return mGameSize;
 		}

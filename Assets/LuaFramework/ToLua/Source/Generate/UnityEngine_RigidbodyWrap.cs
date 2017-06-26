@@ -45,7 +45,6 @@ public class UnityEngine_RigidbodyWrap
 		L.RegVar("inertiaTensorRotation", get_inertiaTensorRotation, set_inertiaTensorRotation);
 		L.RegVar("inertiaTensor", get_inertiaTensor, set_inertiaTensor);
 		L.RegVar("detectCollisions", get_detectCollisions, set_detectCollisions);
-		L.RegVar("useConeFriction", get_useConeFriction, set_useConeFriction);
 		L.RegVar("position", get_position, set_position);
 		L.RegVar("rotation", get_rotation, set_rotation);
 		L.RegVar("interpolation", get_interpolation, set_interpolation);
@@ -976,25 +975,6 @@ public class UnityEngine_RigidbodyWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_useConeFriction(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.Rigidbody obj = (UnityEngine.Rigidbody)o;
-			bool ret = obj.useConeFriction;
-			LuaDLL.lua_pushboolean(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index useConeFriction on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_position(IntPtr L)
 	{
 		object o = null;
@@ -1409,25 +1389,6 @@ public class UnityEngine_RigidbodyWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index detectCollisions on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int set_useConeFriction(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.Rigidbody obj = (UnityEngine.Rigidbody)o;
-			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
-			obj.useConeFriction = arg0;
-			return 0;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index useConeFriction on a nil value" : e.Message);
 		}
 	}
 

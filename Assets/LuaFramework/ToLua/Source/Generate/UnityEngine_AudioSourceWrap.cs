@@ -42,6 +42,7 @@ public class UnityEngine_AudioSourceWrap
 		L.RegVar("panStereo", get_panStereo, set_panStereo);
 		L.RegVar("spatialBlend", get_spatialBlend, set_spatialBlend);
 		L.RegVar("spatialize", get_spatialize, set_spatialize);
+		L.RegVar("spatializePostEffects", get_spatializePostEffects, set_spatializePostEffects);
 		L.RegVar("reverbZoneMix", get_reverbZoneMix, set_reverbZoneMix);
 		L.RegVar("bypassEffects", get_bypassEffects, set_bypassEffects);
 		L.RegVar("bypassListenerEffects", get_bypassListenerEffects, set_bypassListenerEffects);
@@ -728,6 +729,25 @@ public class UnityEngine_AudioSourceWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_spatializePostEffects(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)o;
+			bool ret = obj.spatializePostEffects;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index spatializePostEffects on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_reverbZoneMix(IntPtr L)
 	{
 		object o = null;
@@ -1199,6 +1219,25 @@ public class UnityEngine_AudioSourceWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index spatialize on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_spatializePostEffects(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)o;
+			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
+			obj.spatializePostEffects = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index spatializePostEffects on a nil value" : e.Message);
 		}
 	}
 

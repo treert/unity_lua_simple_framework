@@ -27,7 +27,7 @@ public class UnityEngine_RendererWrap
 		L.RegVar("lightmapIndex", get_lightmapIndex, set_lightmapIndex);
 		L.RegVar("realtimeLightmapIndex", get_realtimeLightmapIndex, set_realtimeLightmapIndex);
 		L.RegVar("lightmapScaleOffset", get_lightmapScaleOffset, set_lightmapScaleOffset);
-		L.RegVar("motionVectors", get_motionVectors, set_motionVectors);
+		L.RegVar("motionVectorGenerationMode", get_motionVectorGenerationMode, set_motionVectorGenerationMode);
 		L.RegVar("realtimeLightmapScaleOffset", get_realtimeLightmapScaleOffset, set_realtimeLightmapScaleOffset);
 		L.RegVar("isVisible", get_isVisible, null);
 		L.RegVar("lightProbeUsage", get_lightProbeUsage, set_lightProbeUsage);
@@ -400,7 +400,7 @@ public class UnityEngine_RendererWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_motionVectors(IntPtr L)
+	static int get_motionVectorGenerationMode(IntPtr L)
 	{
 		object o = null;
 
@@ -408,13 +408,13 @@ public class UnityEngine_RendererWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
-			bool ret = obj.motionVectors;
-			LuaDLL.lua_pushboolean(L, ret);
+			UnityEngine.MotionVectorGenerationMode ret = obj.motionVectorGenerationMode;
+			ToLua.Push(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index motionVectors on a nil value" : e.Message);
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index motionVectorGenerationMode on a nil value" : e.Message);
 		}
 	}
 
@@ -780,7 +780,7 @@ public class UnityEngine_RendererWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int set_motionVectors(IntPtr L)
+	static int set_motionVectorGenerationMode(IntPtr L)
 	{
 		object o = null;
 
@@ -788,13 +788,13 @@ public class UnityEngine_RendererWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
-			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
-			obj.motionVectors = arg0;
+			UnityEngine.MotionVectorGenerationMode arg0 = (UnityEngine.MotionVectorGenerationMode)ToLua.CheckObject(L, 2, typeof(UnityEngine.MotionVectorGenerationMode));
+			obj.motionVectorGenerationMode = arg0;
 			return 0;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index motionVectors on a nil value" : e.Message);
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index motionVectorGenerationMode on a nil value" : e.Message);
 		}
 	}
 
